@@ -6,12 +6,18 @@ const closeModalBtn = document.querySelector(
 const modal = document.querySelector(".modal") as HTMLDivElement;
 
 // Functionality definition
-function showModal() {
+function openModal() {
   modal.classList.remove("hidden");
 }
 
 function hideModal(modal: HTMLDivElement) {
   modal.classList.add("hidden");
+}
+
+function handleEscKeyToCloseModal(event: KeyboardEvent) {
+  if (event.key === "Escape") {
+    hideModal(modal);
+  }
 }
 
 function handleCloseButtonClick(event: MouseEvent) {
@@ -24,7 +30,9 @@ function handleCloseButtonClick(event: MouseEvent) {
 
 // Event handling
 openModalBtns.forEach(openModelBtn =>
-  openModelBtn.addEventListener("click", showModal)
+  openModelBtn.addEventListener("click", openModal)
 );
 
 closeModalBtn.addEventListener("click", handleCloseButtonClick);
+
+window.addEventListener("keyup", handleEscKeyToCloseModal);
