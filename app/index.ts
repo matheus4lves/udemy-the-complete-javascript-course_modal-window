@@ -23,12 +23,8 @@ function handleEscKeyToCloseModal(event: KeyboardEvent) {
   }
 }
 
-function handleCloseButtonClick(event: MouseEvent) {
-  const target = event.target as HTMLButtonElement;
-
-  if (target.classList.contains("close-modal")) {
-    closeModal();
-  }
+function handleCloseButtonClick() {
+  closeModal();
 }
 
 // Event handling
