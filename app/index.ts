@@ -7,34 +7,28 @@ const modal: HTMLDivElement | null = document.querySelector(".modal");
 const overlay: HTMLDivElement | null = document.querySelector(".overlay");
 
 // Functionality definition
+function validateElements(...elements: (HTMLElement | null)[]) {
+  const missingElements = elements.filter(el => !el);
+  if (missingElements.length > 0) {
+    console.error("Missing elements: ", missingElements);
+    return false;
+  } else {
+    return true;
+  }
+}
+
 function openModal() {
-  if (!modal) {
-    console.error("modal element not found!");
-    return;
-  }
-
-  if (!overlay) {
-    console.error("overlay element not found!");
-    return;
-  }
-
-  modal.classList.remove("hidden");
-  overlay.classList.remove("hidden");
+  if (!validateElements(modal, overlay)) return;
+  // https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#non-null-assertion-operator-postfix-
+  modal!.classList.remove("hidden");
+  overlay!.classList.remove("hidden");
 }
 
 function closeModal() {
-  if (!modal) {
-    console.error("modal element not found!");
-    return;
-  }
+  if (!validateElements(modal, overlay)) return;
 
-  if (!overlay) {
-    console.error("overlay element not found!");
-    return;
-  }
-
-  modal.classList.add("hidden");
-  overlay.classList.add("hidden");
+  modal!.classList.add("hidden");
+  overlay!.classList.add("hidden");
 }
 
 function handleEscKeyToCloseModal(event: KeyboardEvent) {
