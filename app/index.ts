@@ -27,6 +27,10 @@ function handleCloseButtonClick() {
   closeModal();
 }
 
+function handleOverlayClick() {
+  closeModal();
+}
+
 // Event handling
 openModalBtns.forEach(openModelBtn =>
   openModelBtn.addEventListener("click", openModal)
@@ -35,3 +39,5 @@ openModalBtns.forEach(openModelBtn =>
 closeModalBtn.addEventListener("click", handleCloseButtonClick);
 
 window.addEventListener("keyup", handleEscKeyToCloseModal);
+
+overlay.addEventListener("click", handleOverlayClick);
