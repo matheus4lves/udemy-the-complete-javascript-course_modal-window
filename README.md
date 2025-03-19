@@ -4,16 +4,16 @@
 
 The original project was implemented to practice DOM manipulation and event handling in JavaScript.
 
-These are the improvements of my implementation:
+Here are the improvements in my implementation:
 
 1. I wrote the script in **TypeScript**
-2. I have handled missing elements gracefully
+2. I implemented graceful handling for missing elements
 3. I have applied some Clean Code techniques, such as using guard clauses and writing functions that do one thing
 4. I have created a workflow for building and serving the app
 
 ## How it works
 
-You can open the modal window by clicking any of the three buttons. Once the modal is open, you can close it by clicking the close button, clicking outside the modal, or by hitting the ESC key.
+You can open the modal window by clicking any of the three buttons. To close the modal, click the close button, click outside the modal, or press the ESC key.
 
 ## Demo
 
@@ -26,12 +26,12 @@ You can open the modal window by clicking any of the three buttons. Once the mod
 
 <p align="center">
   <img src="./images/modal-hidden.png" width="1920" alt="A page with a green background displaying three buttons that when clicked open a modal window.">
-  <em>Hidden modal<em>
+  <em>Hidden modal</em>
 </p>
 
 <p align="center">
   <img src="./images/modal-visible.png" width="1920" alt="A modal window displayed over a blurred overlay.">
-  <em>Visible modal<em>
+  <em>Visible modal</em>
 </p>
 
 ## DevDependencies
@@ -41,11 +41,10 @@ You can open the modal window by clicking any of the three buttons. Once the mod
 ## Installation and usage
 
 1. Clone or download this repository
-2. Open it with VS Code
+2. Open it with VS Code (alternatively, use your OS's terminal/CMD)
 3. Run `npm install` to install dependencies
-4. Run `npm run dev` to build
-5. Run `npm serve` to serve
-6. Click `Go Live` at the bottom left corner of the editor
+4. Run `npm run dev` to build the app
+5. Run `npm run serve` to serve the app over http
 
 ## Source
 
